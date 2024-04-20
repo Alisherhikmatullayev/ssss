@@ -1,23 +1,21 @@
+let cards = document.querySelectorAll('.card')
 
-const obj =cartObj()
-console.log(obj)
-let totalPrice =0
-let aa =''
-for (const key in obj) {
-  totalPrice +=obj[key].price
-  aa +=` ${key}:  ${obj[key].info},`
-  }
-  let bb = 9000 
-  let ss = totalPrice+bb
-  console.log(`Mahsulot nomi ${aa} jami so'mma  ${ss} yetkazib berish xizmati ${bb}`);
+let arr = ['red', 'blue', 'aqua', 'green', 'gray', 'black', 'indigo', 'purple', 'yellow', 'orange']
+function rand() {
+    let i = Math.floor(Math.random() * arr.length)
+    return arr[i]
+}
+    cards.forEach(card=>{
+    card.style.background = rand() 
 
+})
 
-  let son = +prompt('Foydalanuvchilar soni')
-  const user = { }
-  for (let i = 0; i <son; i++){
-    let name =prompt(`Foydalanuvchi ismingizni kiriting:`)
-    let age =+prompt(`Foydalanuvchi yoshingizni kiriting:`)
-    console.log(`${i+1} foydalanuchi ismi ${name} foydalanuvchi yoshingizni ${age} `);
-    }
+function changeColors() {
+    cards.forEach(card => {
+        card.style.background = rand();
+    });
+}
 
+let button= document.querySelector( '.change-color-button' )
+    button.addEventListener('click',changeColors);
 
